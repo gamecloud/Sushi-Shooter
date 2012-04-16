@@ -146,10 +146,7 @@ public class FrozenBubble extends Activity
   {
     super.onCreateOptionsMenu(menu);
     TransactionReceiver.retrieveTransactionInfo(this.getApplicationContext());
-    menu.add(0, MENU_COLORBLIND_MODE_ON, 0,
-             R.string.menu_colorblind_mode_on);
-    menu.add(0, MENU_COLORBLIND_MODE_OFF, 0,
-             R.string.menu_colorblind_mode_off);
+    
     menu.add(0, MENU_FULLSCREEN_ON, 0, R.string.menu_fullscreen_on);
     menu.add(0, MENU_FULLSCREEN_OFF, 0, R.string.menu_fullscreen_off);
     menu.add(0, MENU_SOUND_ON, 0, R.string.menu_sound_on);
@@ -177,10 +174,6 @@ public class FrozenBubble extends Activity
     super.onPrepareOptionsMenu(menu);
     menu.findItem(MENU_SOUND_ON).setVisible(!getSoundOn());
     menu.findItem(MENU_SOUND_OFF).setVisible(getSoundOn());
-    menu.findItem(MENU_COLORBLIND_MODE_ON).setVisible(
-        getMode() == GAME_NORMAL);
-    menu.findItem(MENU_COLORBLIND_MODE_OFF).setVisible(
-        getMode() != GAME_NORMAL);
     menu.findItem(MENU_FULLSCREEN_ON).setVisible(!fullscreen);
     menu.findItem(MENU_FULLSCREEN_OFF).setVisible(fullscreen);
     menu.findItem(MENU_TOUCHSCREEN_AIM_THEN_SHOOT).setVisible(
